@@ -1,0 +1,180 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>
+      {% block title %}
+      base
+      {% endblock  %}
+    </title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/navbar2.css'%}">
+    {% block css %}
+    
+    {% endblock %}
+    
+  </head>
+  <body>
+    
+    <header>
+      <div class="logo1"> 
+        <img src="{% static 'image/swiggylogo2.png'%}" alt="Swiggy Logo" height="45px" width="150px">
+        <!-- <span>Swiggy</span> -->
+      </div>
+          Wecome {{data.name}} <br/>
+          Email : {{data.email}}
+      <nav>
+        <a class="active" href="">About Swiggy</a>
+        <a href="">Our Businesses</a>
+        <a href="#">Delivering For Everyone</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Log out</a>
+      </nav>
+    </header>
+    
+    {% load static %}
+ 
+    
+    {% comment %} <button type="button"> <a href="">Cart <span>{{l}}</span></a></button> {% endcomment %}
+    
+    
+    {% if items %}
+    {% for i in items %}
+    <div class="card">
+          <img src="{% static 'image/Pizza4.avif'%}" alt="Pizza4">
+          <div class="card-content">
+            <h3>{{i.name}}</h3>
+            <h5>{{i.fess}}</h5>
+            <div class="buttons">
+              <button class="btn cart-btn"><a href="{% url 'addcart' pk=i.id %}">Add to Cart</button>
+              <button class="btn order-btn">Order Now</button>
+            </div>
+          </div>
+        </div>
+    {% endfor %}
+    {% endif %}
+    
+  <section class="about">
+    <h1>ABOUT US</h1>
+    <p>Swiggy is a new-age consumer-first organization offering an easy-to-use convenience platform, accessible through a unified app.</p>
+    
+    <div class="services">
+      <div class="servic">
+        <img src="{% static 'image/food.webp'%}" alt="Food" height="180px" width="180px">
+      </div>
+      <div class="servic">
+        <img src="{% static 'image/instamart.webp'%}" alt="Instamart" height="180px" width="180px">
+      </div>
+      <div class="servic">
+        <img src="{% static 'image/dineout.webp'%}" alt="Dineout" height="180px" width="180px">
+      </div>
+    </div>
+
+    <div class="swiggy-icon">
+      <img src="{% static 'image/swiggysign.webp'%}" alt="Swiggy Icon">
+    </div>
+  </section>
+  
+
+
+
+<footer class="footer">
+    <div class="footer-top">
+      <div class="footer-logo">
+        <img src="{% static 'image/download.png'%}" alt="Swiggy Logo">
+        <p>© 2025 Swiggy Limited</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h3>Company</h3>
+          <ul>
+            <li>About Us</li>
+            <li>Investor Relations</li>
+            <li>Careers</li>
+            <li>Team</li>
+            <li>Swiggy One</li>
+            <li>Swiggy Instamart</li>
+            <li>Swiggy Dineout</li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact us</h3>
+          <ul>
+            <li>Help & Support</li>
+            <li>Partner with us</li>
+            <li>Ride with us</li>
+          </ul>
+          <h3>Legal</h3>
+          <ul>
+            <li>Terms & Conditions</li>
+            <li>Cookie Policy</li>
+            <li>Privacy Policy</li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Available in:</h3>
+          <ul>
+            <li>Bangalore</li>
+            <li>Gurgaon</li>
+            <li>Hyderabad</li>
+            <li>Delhi</li>
+            <li>Mumbai</li>
+            <li>Pune</li>
+            <li><button class="city-btn">679 cities</button></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Life at Swiggy</h3>
+          <ul>
+            <li>Explore with Swiggy</li>
+            <li>Swiggy News</li>
+            <li>Snackables</li>
+          </ul>
+          <h3>Social Links</h3>
+          <div class="social-icons">
+            <i class="fa-brands fa-linkedin"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-pinterest"></i>
+            <i class="fa-brands fa-x-twitter"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>For better experience, download the Swiggy app now</p>
+      <div class="app-buttons">
+        <img src="{% static 'image/appstorelogo.svg'%}" alt="App Store">
+        <img src="{% static 'image/playstorelogo.webp'%}" alt="Google Play">
+      </div>
+    </div>
+  </footer>
+
+
+
+{% block content %}
+
+{% endblock %}
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

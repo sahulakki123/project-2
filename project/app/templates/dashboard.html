@@ -1,0 +1,71 @@
+desshboard
+
+{{data}}
+
+
+<img src="{{data.image.url}}" alt="" width="400px"><br> <br>
+
+<button type="submit"> <a href="{% url 'query' %}">query</a></button>
+<button type="submit"> <a href="{% url 'showquery' %}">show query</a></button>
+<button type="submit"><a href="{% url 'logout' %}">Logout</a></button> 
+<br>
+<form action="{% url 'search' %}" method="post">
+    {% csrf_token %}
+    <input type="search" name="search" id="">
+    <button type="submit">Search</button>
+    <button type="submit"><a href="{% url 'showquery' %}">Rest filter</a></button>
+</form>
+
+<br>
+{% if query %}
+<form action="{% url 'querydata' %}" method="post">
+    {% csrf_token %}
+    name: <input type="text" name="name" value="{{data.name}}" readonly><br>
+
+    email: <input type="email" name="email" value="{{data.email}}" readonly><br>
+
+    Quray: <input type="text" name="query"><br>
+    <button type="submit">query</button>
+
+</form>
+{% endif %}
+
+{% if allquery %}
+
+<table border="1">
+    <tr>
+         <th>s.no</th>
+         <th>id</th>
+         <th>nema</th>
+         <th>Email</th>
+         <th>Query</th>
+         <th>edit</th>
+         <th>delete</th>
+    </tr>
+    {% for i in allquery %}
+    <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{i.id}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.query}}</td>
+        <td><button type="submit"><a href="{% url 'edit' qpk=i.id %}">Edit</a></button></td>
+        <td><button type="submit"><a href="{% url 'delete' qpk=i.id %}">Delete</a></button></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+
+{% if edit %}
+<form action="{% url 'update' qpk=edit.id %}" method="post">
+    {% csrf_token %}
+
+    name: <input type="text" name="name" value="{{edit.name}}" readonly>
+    <br> 
+    email: <input type="email" name="email" value="{{edit.email}}" readonly>
+    <br>
+    Quray: <input type="text" name="query" value={{edit.query}}>
+    <br>
+    <button type="submit">Update</button>
+</form>
+{% endif %}

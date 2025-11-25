@@ -1,0 +1,23 @@
+
+
+    
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/login.css'%}">
+
+    <div class="login">
+        {{msg}}
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            <h2>Log in</h2>
+            <a href="{% url 'signup' %}" class="sin">or create an account</a>
+          
+           
+            <input type="email" name="email"  placeholder="Email Address" required  value="{{email}}">
+            {{pmsg}}
+            <input type="pass" name="Password" placeholder="Confirm Password" required>
+
+            <button type="submit" class="submit" >Submit</button>
+      
+        </form>
+    </div>
+   

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>
+        {% block title %}
+          base
+        {% endblock  %}
+    </title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/navbar.css'%}">
+    {% block css %}
+
+    {% endblock %}
+
+</head>
+<body>
+ <!-- Header -->
+  <header>
+    <div class="log"><img src="{% static 'image/Swiggylogo.png'%}" alt="Swiggylogo" height="45px" width="150px"></div>
+    <nav>
+      <a href="{% url 'swiggy_neb' %}">Swiggy Corporate</a>
+      <a href="{% url 'partner_with_us' %}">Partner with us</a>
+      <a href="#" class="btn-outline">Get the App</a>
+      <a href="{% url 'login' %}" class="btn-black">Sign in</a>
+    </nav>
+  </header>
+
+  <!-- Main Hero Section -->
+  <section class="hero-section">
+    <img src="{% static 'image/Veggies.avif'%}" alt="Grocery Bag" class="hero-img-left">
+    
+    <div class="hero-content">
+      <h1>Order food & groceries. Discover<br>best restaurants. Swiggy it!</h1>
+      <div class="search-area">
+        <i class="fa-solid fa-location-dot"></i>
+        <input type="text" placeholder=" Enter your delivery location">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder=" Search for restaurant, item or more">
+    </div>
+    </div>
+    <img src="{% static 'image/Sushi_replace.avif'%}" alt="Sushi" class="hero-img-right">
+  </section>
+
+
+  <div class="bo">
+
+  <h2>Order our best food options</h2>
+
+  <div class="food-container">
+    <div class="food-item">
+      <img src="{% static 'image/Pizza.jpeg'%}" alt="Pizza">
+      <p>Pizza</p>
+    </div>
+    <div class="food-item">
+      <img src="{% static 'image/Biryani.jpeg'%}" alt="Biryani">
+      <p>Biryani</p>
+    </div>
+    <div class="food-item">
+      <img src="{% static 'image/Burger.jpeg'%}" alt="Burger">
+      <p>Burger</p>
+    </div>
+    <div class="food-item">
+      <img src="{% static 'image/Noodles.jpeg'%}" alt="Noodles">
+      <p>Noodles</p>
+    </div>
+    <div class="food-item">
+      <img src="{% static 'image/Chole Bhature1.jpeg'%}" alt="Chole Bhature">
+      <p>Chole Bhature</p>
+    </div>
+    <div class="food-item">
+      <img src="{% static 'image/Shawarma.jpeg'%}" alt="Shawarma">
+      <p>Shawarma</p>
+    </div>
+    <div class="food-item">
+      <img src="{% static 'image/Dosa.jpeg'%}" alt="Dosa">
+      <p>Dosa</p>
+    </div>
+    <div class="food-item">
+      <img src="{% static 'image/Pav Bhaji Pav Bhaji.jpeg'%}" alt="Pav Bhaji">
+      <p>Pav Bhaji</p>
+    </div>
+    <div class="food-item">
+      <img src="{% static 'image/Pasta.jpeg'%}" alt="Pasta">
+      <p>Pasta</p>
+    </div>
+    <div class="food-item">
+      <img src="{% static 'image/Pure Veg.jpeg'%}" alt="Pure Veg">
+      <p>Pure Veg</p>
+    </div>
+    <div class="food-item">
+      <img src="{% static 'image/Gulab Jamun.jpeg'%}" alt="Gulab Jamun">
+      <p>Gulab Jamun</p>
+    </div>
+    <div class="food-item">
+      <img src="{% static 'image/Pastry.jpeg'%}" alt="Pastry">
+      <p>Pastry</p>
+    </div>
+    <div class="food-item">
+      <img src="{% static 'image/Idli1.jpeg'%}" alt="Idli">
+      <p>Idli</p>
+    </div>
+    <div class="food-item">
+      <img src="{% static 'image/Shake.jpeg'%}" alt="Shake">
+      <p>Shake</p>
+    </div>
+      <div class="food-item">
+      <img src="{% static 'image/Paratha.jpeg'%}" alt="Paratha">
+      <p>Paratha</p>
+    </div>
+      <div class="food-item">
+      <img src="{% static 'image/Cake.jpeg'%}" alt="Cake">
+      <p>Cake</p>
+    </div>
+      <div class="food-item">
+      <img src="{% static 'image/Vada.jpeg'%}" alt="Vada">
+      <p>Vada</p>
+    </div>
+      <div class="food-item">
+      <img src="{% static 'image/Ice Cream.jpeg'%}" alt="Ice Cream">
+      <p>Ice Cream</p>
+    </div>
+  </div>
+
+  </div>
+
+
+{% block content %}
+
+{% endblock %}
+
+</body>
+</html>

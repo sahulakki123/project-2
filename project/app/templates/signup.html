@@ -1,0 +1,29 @@
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/signup.css'%}">
+
+
+ <div class="signup">
+    <form action="{% url 'signup' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+      <h2>Sign Up</h2>
+      <a href="{% url 'login' %}" class='log'>or login to your account</a>
+      <input type="text" name="name" placeholder="Full Name" required>
+
+      <input type="number" name="contact" placeholder="Enter the phone number" required>
+      {{msg}}
+      <input type="email" name="email" placeholder="Email Address" required>
+
+      <input type="file" name="image" accept=".jpeg,.png" >
+      <input type="file" name="document" accept=".pdf" >
+      
+      {{pmsg}}
+      <input type="pass" name="pass"  placeholder="Password" required>
+      <input type="cpass" name="cpass" placeholder="Confirm Password" required>
+      
+      <input type="submit" value="Sign up" class="su">
+      
+    </form>
+  </div>
+
+

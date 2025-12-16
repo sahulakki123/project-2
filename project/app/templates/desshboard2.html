@@ -26,14 +26,21 @@
         <img src="{% static 'image/swiggylogo2.png'%}" alt="Swiggy Logo" height="45px" width="150px">
         <!-- <span>Swiggy</span> -->
       </div>
-          Wecome {{data.name}} <br/>
+          Wecome : {{data.name}} <br/>
           Email : {{data.email}}
       <nav>
         <a class="active" href="">About Swiggy</a>
         <a href="">Our Businesses</a>
         <a href="#">Delivering For Everyone</a>
         <a href="#">Contact Us</a>
-        <a href="#">Log out</a>
+
+        <select name="Profile">
+          <option value="">Profile</option>
+          <option value="">add query</option>
+          <option value=""></option>
+          <option value=""></option>
+        </select>
+        <a href="logout">Log out</a>
       </nav>
     </header>
     

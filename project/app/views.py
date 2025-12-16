@@ -114,8 +114,8 @@ def addcart(req,pk):
 
 def logout(req):
     data = req.session.get('id',None)
-    req.session.flush()
-    return redirect('landing')
+    req.session.flush(data)
+    return redirect('base.html')
 
 def query(req):
     data = req.session.get('id',None)
